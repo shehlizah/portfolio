@@ -945,7 +945,7 @@ main {
   margin-bottom: 10px;
 }
 
-.project-item { display: none; }
+/* .project-item { display: none; } */
 
 .project-item.active {
   display: block;
