@@ -16,6 +16,8 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 //portfolio
 
 const portfolioItem = document.querySelectorAll("[data-project-item]");
+
+console.log(portfolioItem);
 const modalContainer2 = document.querySelector("[data-modal-container2]");
 const overlay2 = document.querySelector("[data-overlay2]");
 const modalCloseBtn2 = document.querySelector("[data-modal-close-btn]");
