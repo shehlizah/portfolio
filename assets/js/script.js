@@ -14,6 +14,9 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
+//portfolio
+
+const portfolioItem = document.querySelectorAll("[data-project-item]");
 
 
 // testimonials variables
@@ -74,6 +77,24 @@ for (let i = 0; i < selectItems.length; i++) {
 
   });
 }
+
+
+// add click event to PORTFOLIO all modal items
+for (let i = 0; i < portfolioItem.length; i++) {
+
+  portfolioItem[i].addEventListener("click", function () {
+
+    modalImg.src = this.querySelector("[ data-project-img]").src;
+    // modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+    modalTitle.innerHTML = this.querySelector("[data-project-title]").innerHTML;
+    modalText.innerHTML = this.querySelector("[data-project-text]").innerHTML;
+
+    testimonialsModalFunc();
+
+  });
+
+}
+
 
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
