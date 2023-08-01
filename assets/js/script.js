@@ -90,6 +90,7 @@ const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
+if(select)
 select.addEventListener("click", function () { elementToggleFunc(this); });
 
 // add event in all select items
