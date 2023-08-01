@@ -17,8 +17,31 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 //portfolio
 
 const portfolioItem = document.querySelectorAll("[data-project-item]");
+const modalContainer2 = document.querySelector("[data-modal-container2]");
+const overlay2 = document.querySelector("[data-overlay2]");
+const modalCloseBtn2 = document.querySelector("[data-modal-close-btn]");
 
+// modal toggle function
+const portfolioModalFunc = function () {
+  modalContainer2.classList.toggle("active");
+  overlay2.classList.toggle("active");
+}
 
+// add click event to PORTFOLIO all modal items
+for (let i = 0; i < portfolioItem.length; i++) {
+
+  portfolioItem[i].addEventListener("click", function () {
+
+    modalImg.src = this.querySelector("[ data-project-img]").src;
+    // modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+    modalTitle.innerHTML = this.querySelector("[data-project-title]").innerHTML;
+    modalText.innerHTML = this.querySelector("[data-project-text]").innerHTML;
+
+    portfolioModalFunc();
+
+  });
+
+}
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
@@ -57,6 +80,9 @@ modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
 
+modalCloseBtn2.addEventListener("click", portfolioModalFunc);
+overlay2.addEventListener("click", portfolioModalFunc);
+
 
 // custom select variables
 const select = document.querySelector("[data-select]");
@@ -79,21 +105,6 @@ for (let i = 0; i < selectItems.length; i++) {
 }
 
 
-// add click event to PORTFOLIO all modal items
-for (let i = 0; i < portfolioItem.length; i++) {
-
-  portfolioItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[ data-project-img]").src;
-    // modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-project-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-project-text]").innerHTML;
-
-    testimonialsModalFunc();
-
-  });
-
-}
 
 
 // filter variables
