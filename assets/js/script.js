@@ -37,8 +37,8 @@ for (let i = 0; i < portfolioItems.length; i++) {
   });
 }
 
-modalCloseBtn.addEventListener("click", portfolioModalFunc);
-overlay.addEventListener("click", portfolioModalFunc);
+modalCloseBtn2.addEventListener("click", portfolioModalFunc);
+overlay2.addEventListener("click", portfolioModalFunc);
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
