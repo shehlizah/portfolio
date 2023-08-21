@@ -15,34 +15,31 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 
 //portfolio
 
-const portfolioItem = document.querySelectorAll("[data-project-item]");
-
-console.log(portfolioItem);
+const portfolioItems = document.querySelectorAll("[data-project-item]");
 const modalContainer2 = document.querySelector("[data-modal-container2]");
 const overlay2 = document.querySelector("[data-overlay2]");
 const modalCloseBtn2 = document.querySelector("[data-modal-close-btn]");
+const modalImg2 = document.getElementById("modal-image"); // Assuming you have an element with ID "modal-image"
+const modalTitle2 = document.getElementById("modal-title"); // Assuming you have an element with ID "modal-title"
+const modalText2 = document.getElementById("modal-text"); // Assuming you have an element with ID "modal-text"
 
-// modal toggle function
 const portfolioModalFunc = function () {
   modalContainer2.classList.toggle("active");
   overlay2.classList.toggle("active");
 }
 
-// add click event to PORTFOLIO all modal items
-for (let i = 0; i < portfolioItem.length; i++) {
-
-  portfolioItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[ data-project-img]").src;
-    // modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-project-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-project-text]").innerHTML;
-
+for (let i = 0; i < portfolioItems.length; i++) {
+  portfolioItems[i].addEventListener("click", function () {
+    modalImg2.src = this.querySelector("[data-project-img]").src;
+    modalTitle2.innerHTML = this.querySelector("[data-project-title]").innerHTML;
+    modalText2.innerHTML = this.querySelector("[data-project-text]").innerHTML;
     portfolioModalFunc();
-
   });
-
 }
+
+modalCloseBtn.addEventListener("click", portfolioModalFunc);
+overlay.addEventListener("click", portfolioModalFunc);
+
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
